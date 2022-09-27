@@ -2,7 +2,7 @@
 
 rm -f /etc/systemd/system/php_local_page_server.service
 
-cat <<< '
+cat << EOF > /etc/systemd/system/php_local_page_server.service
 [Unit]
 Description=php_local_page_server
 Documentation=
@@ -21,7 +21,7 @@ Type=notify
 [Install]
 WantedBy=multi-user.target
 Alias=php_local_page_server.service
-' > /etc/systemd/system/php_local_page_server.service
+EOF
 
 echo "[+] installed: php_local_page_server.service"
 echo "[+] path: /etc/systemd/system/php_local_page_server.service"
