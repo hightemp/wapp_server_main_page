@@ -12,14 +12,14 @@ if (defined('DEBUG') && DEBUG) {
 
 $SERVER_NAME = getenv('SERVER_NAME');
 
-if (isset($_GET['myDoc'])) {
-    file_put_contents('./content.html', $_GET['myDoc']);
+if (isset($_REQUEST['myDoc'])) {
+    file_put_contents('./content.html', $_REQUEST['myDoc']);
 }
 
 $sContent = file_get_contents('./content.html');
 
 if (isset($_GET['edit'])) {
-    require_once("index_page.php");
-} else {
     require_once("edit_page.php");
+} else {
+    require_once("index_page.php");
 }

@@ -13,7 +13,12 @@
     <script type="text/javascript"></script>
     <style type="text/css"></style>
 
-    <form name="compForm" method="post" action="index.php" onsubmit="if(validateMode()){this.myDoc.value=oDoc.innerHTML;return true;}return false;">
+    <form class="compForm" name="compForm" method="post" action="index.php" onsubmit="if(validateMode()){this.myDoc.value=oDoc.innerHTML;return true;}return false;">
+        <div class="top-panel">
+            <div></div>
+            <span id="editMode"><input id="switchBox" type="checkbox" name="switchMode" onchange="setDocMode(this.checked);"> <label for="switchBox">Показать HTML</label></span>
+            <span><input class="button" id="btn" type="submit" value="Принять"></span>
+        </div>
         <input type="hidden" name="myDoc">
         <div id="toolBar1">
             <select onchange="formatDoc('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;">
@@ -81,8 +86,6 @@
             <img class="intLink" title="Вставить" onclick="formatDoc('paste');" src="data:image/gif;base64,R0lGODlhFgAWAIQUAD04KTRLY2tXQF9vj414WZWIbXmOrpqbmpGjudClFaezxsa0cb/I1+3YitHa7PrkIPHvbuPs+/fvrvv8/f///////////////////////////////////////////////yH5BAEAAB8ALAAAAAAWABYAAAWN4CeOZGmeaKqubGsusPvBSyFJjVDs6nJLB0khR4AkBCmfsCGBQAoCwjF5gwquVykSFbwZE+AwIBV0GhFog2EwIDchjwRiQo9E2Fx4XD5R+B0DDAEnBXBhBhN2DgwDAQFjJYVhCQYRfgoIDGiQJAWTCQMRiwwMfgicnVcAAAMOaK+bLAOrtLUyt7i5uiUhADs=">
         </div>
         <div id="textBox" contenteditable="true"><?php echo $sContent ?></div>
-        <span><input id="btn" type="submit" value="Принять"></span>
-        <span id="editMode"><input id="switchBox" type="checkbox" name="switchMode" onchange="setDocMode(this.checked);"> <label for="switchBox">Показать HTML</label></span>
     </form>
 
 
@@ -156,3 +159,110 @@
 </body>
 
 </html>
+
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    svg:not(:root) {
+        display: block;
+    }
+
+    .playable-code {
+        background-color: #f4f7f8;
+        border: none;
+        border-left: 6px solid #558abb;
+        border-width: medium medium medium 6px;
+        color: #4d4e53;
+        height: 100px;
+        width: 90%;
+        padding: 10px 10px 0;
+    }
+
+    .playable-canvas {
+        border: 1px solid #4d4e53;
+        border-radius: 2px;
+    }
+
+    .playable-buttons {
+        text-align: right;
+        width: 90%;
+        padding: 5px 10px 5px 26px;
+    }
+
+    .compForm {
+        width: calc(100% - 2px);
+    }
+
+    .button {
+        padding: 5px;
+        background: green;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .top-panel {
+        top: 0px;
+        padding: 2px;
+        position: sticky;
+        background: rgba(0,0,0,0.1);
+        display: grid;
+        grid-template-columns: 1fr 200px 130px;
+        height: 30px;
+    }
+</style>
+
+<style>
+    .content {
+        display: none;
+    }
+
+    .content::after {
+        display: block;
+    }
+
+    form {
+        display: inline-block;
+        background-color: rgba(180, 180, 180, .8);
+        border: 1px solid rgba(155, 155, 155, .6);
+    }
+
+    .intLink {
+        cursor: pointer;
+    }
+
+    img.intLink {
+        border: 0;
+    }
+
+    #toolBar1 select {
+        font-size: 10px;
+        background-color: #eff;
+    }
+
+    #textBox {
+        min-width: 500px;
+        border: 1px solid rgba(155, 155, 155, .6);
+        padding: 12px;
+        overflow: scroll;
+        background-color: #eff;
+        height: calc(100vh - 30px - 26px - 18px - 40px);
+    }
+
+    #textBox #sourceText {
+        padding: 0;
+        margin: 0;
+        max-width: 800px;
+        min-height: 200px;
+    }
+
+    #switchBox,
+    label,
+    #btn {
+        cursor: pointer;
+    }
+</style>

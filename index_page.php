@@ -8,14 +8,35 @@
 </head>
 <body>
     <div class="top-panel">
-        <a href="/?edit=1">Редактировать</a>
+        <div></div>
+        <div>
+            <a class="button" href="/?edit=1">Редактировать</a>
+        </div>
     </div>
     <?php echo $sContent ?>
 </body>
 </html>
 
 <style>
+body, html {
+    font-family: Arial;
+    margin: 0px;
+    padding: 0px;
+}
 .top-panel {
-
+    top: 0px;
+    padding: 2px;
+    position: sticky;
+    background: rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: 1fr 130px;
+    height: 30px;
+}
+.top-panel .button {
+    padding: 5px;
+    background: green;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
 }
 </style>
