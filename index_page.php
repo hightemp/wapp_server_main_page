@@ -27,7 +27,7 @@ body, html {
     top: 0px;
     padding: 2px;
     position: sticky;
-    background: rgba(0,0,0,0.1);
+    background: #eee;
     display: grid;
     grid-template-columns: 1fr 130px;
     height: 30px;
