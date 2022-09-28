@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная страница - РЕДАКТИРОВАНИЕ - <?php echo $SERVER_NAME ?></title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 </head>
 
 <body onload="initDoc();">
@@ -17,7 +18,7 @@
         <div class="top-panel">
             <div></div>
             <span id="editMode"><input id="switchBox" type="checkbox" name="switchMode" onchange="setDocMode(this.checked);"> <label for="switchBox">Показать HTML</label></span>
-            <span><input class="button" id="btn" type="submit" value="Принять"></span>
+            <span><input class="btn btn-success" id="btn" type="submit" value="Принять"></span>
         </div>
         <input type="hidden" name="myDoc">
         <div id="toolBar1">
@@ -212,8 +213,8 @@
         position: sticky;
         background: #eee;
         display: grid;
-        grid-template-columns: 1fr 200px 130px;
-        height: 30px;
+        grid-template-columns: 1fr 200px auto;
+        height: 40px;
     }
 
     .content {

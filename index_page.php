@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная страница - <?php echo $SERVER_NAME ?></title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 </head>
 <body>
     <div class="top-panel">
         <div></div>
         <div>
-            <a class="button" href="/?edit=1">Редактировать</a>
+            <a class="btn btn-success" href="/?edit=1">Редактировать</a>
         </div>
     </div>
     <?php echo $sContent ?>
@@ -29,8 +30,8 @@ body, html {
     position: sticky;
     background: #eee;
     display: grid;
-    grid-template-columns: 1fr 130px;
-    height: 30px;
+    grid-template-columns: 1fr auto;
+    height: 40px;
 }
 .top-panel .button {
     padding: 5px;
