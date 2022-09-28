@@ -161,9 +161,10 @@
 </html>
 
 <style>
-    body {
-        padding: 0;
-        margin: 0;
+    body, html {
+        font-family: Arial;
+        margin: 0px;
+        padding: 0px;
     }
 
     svg:not(:root) {
@@ -214,9 +215,7 @@
         grid-template-columns: 1fr 200px 130px;
         height: 30px;
     }
-</style>
 
-<style>
     .content {
         display: none;
     }
