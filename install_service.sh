@@ -11,8 +11,8 @@ After=network.target
 [Service]
 WorkingDirectory=$PWD
 ExecStart=/bin/bash start_dev_server.sh
-User=www-data
-Group=www-data
+User=$USER
+Group=$USER
 KillMode=process
 Restart=on-failure
 RestartPreventExitStatus=255
