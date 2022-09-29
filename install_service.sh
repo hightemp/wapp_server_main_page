@@ -26,6 +26,7 @@ EOF
 echo "[+] installed: php_local_page_server.service"
 echo "[+] path: /etc/systemd/system/php_local_page_server.service"
 
+systemctl daemon-reload
 systemctl start php_local_page_server.service
 systemctl enable php_local_page_server.service
 systemctl status php_local_page_server.service
